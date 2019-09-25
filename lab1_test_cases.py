@@ -38,6 +38,8 @@ class TestLab1(unittest.TestCase):
         self.assertEqual(0, bin_search(0, 0, high, list_val))
         self.assertEqual(5, bin_search(7, 0, high, list_val))
         self.assertEqual(high, bin_search(10, 0, high, list_val))
+        self.assertEqual(None, bin_search(1, 0, 1, [0, 2]))
+        self.assertEqual(None, bin_search(1, 0, 2, [0, 2, 2]))
 
     def test_bin_search_errors(self):
         # High exceeds range
