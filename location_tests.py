@@ -15,11 +15,13 @@ class TestLab1(unittest.TestCase):
         loc3 = Location("SLO", 35.3, -120.7)
         loc4 = loc1
 
+        self.assertFalse(loc1 == "memes")
+        self.assertFalse('memes' == loc1)
         self.assertTrue(loc1 == loc1)
         self.assertTrue(loc1 == loc4)
         self.assertTrue(loc1 == loc3)
-        self.assertTrue(loc1 != loc2)
-        self.assertTrue(loc4 != loc2)
+        self.assertFalse(loc1 == loc2)
+        self.assertFalse(loc4 == loc2)
 
 
 if __name__ == "__main__":
