@@ -35,11 +35,6 @@ def bin_search(target, low, high, int_list):  # must use recursion
     assert 0 <= low, 'Low is not in range'
     assert high < len(int_list), 'High not in range'
 
-    if low == high:
-        if int_list[low] == target:
-            return low
-        else:
-            return None
     mid = (low + high) // 2
     low_val = int_list[low]
     mid_val = int_list[mid]
