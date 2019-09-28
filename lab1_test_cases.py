@@ -40,11 +40,13 @@ class TestLab1(unittest.TestCase):
         self.assertEqual(high, bin_search(10, 0, high, list_val))
         self.assertEqual(None, bin_search(1, 0, 1, [0, 2]))
         self.assertEqual(None, bin_search(1, 0, 2, [0, 2, 2]))
+        self.assertEqual(1, bin_search(1, 0, 2, [0, 1, 2]))
+        self.assertEqual(2, bin_search(2, 0, 3, [0, 1, 2, 3]))
 
     def test_bin_search_errors(self):
         # High exceeds range
         with self.assertRaises(AssertionError):
-            bin_search(10, 3, 5, [0, 1, 2, 3, 4, 5])
+            bin_search(10, 3, 6, [0, 1, 2, 3, 4, 5])
 
         # Low is negative
         with self.assertRaises(AssertionError):

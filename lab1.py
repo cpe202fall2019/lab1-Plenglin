@@ -49,5 +49,5 @@ def bin_search(target, low, high, int_list):  # must use recursion
     if low_val <= target <= mid_val:
         return bin_search(target, low, mid, int_list)
     if mid_val <= target <= high_val:
-        return bin_search(target, mid, high, int_list)
+        return bin_search(target, mid + 1, high, int_list)
     return None
