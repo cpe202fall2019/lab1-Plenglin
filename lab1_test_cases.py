@@ -42,8 +42,12 @@ class TestLab1(unittest.TestCase):
         self.assertEqual(None, bin_search(1, 0, 1, [0, 2]))
         self.assertEqual(None, bin_search(1, 0, 2, [0, 2, 2]))
 
+    def test_bin_search_small_n(self):
         self.assertEqual(None, bin_search(32, 0, 0, []))
         self.assertEqual(0, bin_search(2, 0, 0, [2]))
+
+        self.assertEqual(0, bin_search(0, 0, 1, [0, 1]))
+        self.assertEqual(1, bin_search(1, 0, 1, [0, 1]))
 
         self.assertEqual(0, bin_search(0, 0, 2, [0, 1, 2]))
         self.assertEqual(1, bin_search(1, 0, 2, [0, 1, 2]))
@@ -59,6 +63,13 @@ class TestLab1(unittest.TestCase):
         self.assertEqual(2, bin_search(2, 0, 4, [0, 1, 2, 3, 4]))
         self.assertEqual(3, bin_search(3, 0, 4, [0, 1, 2, 3, 4]))
         self.assertEqual(4, bin_search(4, 0, 4, [0, 1, 2, 3, 4]))
+
+        self.assertEqual(0, bin_search(0, 0, 5, [0, 1, 2, 3, 4, 5]))
+        self.assertEqual(1, bin_search(1, 0, 5, [0, 1, 2, 3, 4, 5]))
+        self.assertEqual(2, bin_search(2, 0, 5, [0, 1, 2, 3, 4, 5]))
+        self.assertEqual(3, bin_search(3, 0, 5, [0, 1, 2, 3, 4, 5]))
+        self.assertEqual(4, bin_search(4, 0, 5, [0, 1, 2, 3, 4, 5]))
+        self.assertEqual(5, bin_search(5, 0, 5, [0, 1, 2, 3, 4, 5]))
 
     def test_bin_search_errors(self):
         # High exceeds range
